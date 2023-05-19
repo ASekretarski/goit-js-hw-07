@@ -1,8 +1,6 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 const gallery = document.querySelector('.gallery')
-console.log(galleryItems);
-console.log("__________________________")
 const galleryListItems = [];
 
 galleryItems.forEach(item => {
@@ -17,13 +15,18 @@ galleryItems.forEach(item => {
     />
   </a>
 </div>`);
-    console.log(item.description)
-    console.log(item.preview)
-    console.log(item.original)
-    console.log("__________________________")
 });
 
-console.log(galleryListItems.join(""))
-
 gallery.insertAdjacentHTML("beforeend", galleryListItems.join(""))
+
+const allGalleryItems = document.querySelectorAll('.gallery__item')
+
+for (const item of allGalleryItems) {
+    const itemLink = item.querySelector('.gallery__link')
+    item.addEventListener("click", function () {
+        basicLightbox.create(`
+		<img width="1400" height="900" src="${itemLink.href}">
+	`).show()
+    })
+}
 
