@@ -19,13 +19,13 @@ galleryItems.forEach(item => {
 
 gallery.insertAdjacentHTML("beforeend", galleryListItems.join(""))
 
-const allGalleryItems = document.querySelectorAll('.gallery__item')
+const allGalleryLinks = document.querySelectorAll('.gallery__link')
 
-for (const item of allGalleryItems) {
-    const itemLink = item.querySelector('.gallery__link')
-    item.addEventListener("click", function () {
+for (const link of allGalleryLinks) {
+    link.addEventListener("click", function (event) {
+        event.preventDefault()
         basicLightbox.create(`
-		<img width="1400" height="900" src="${itemLink.href}">
+		<img width="1400" height="900" src="${link.href}">
 	`).show()
     })
 }
