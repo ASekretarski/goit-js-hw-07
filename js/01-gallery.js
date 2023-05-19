@@ -24,9 +24,8 @@ const allGalleryLinks = document.querySelectorAll('.gallery__link')
 for (const link of allGalleryLinks) {
     link.addEventListener("click", function (event) {
         event.preventDefault()
-        basicLightbox.create(`
-		<img width="1400" height="900" src="${link.href}">
-	`).show()
+        const imageLink = `<img width="1400" height="900" src="${link.href}">`
+        basicLightbox.create(imageLink).show()  
     })
 }
 
