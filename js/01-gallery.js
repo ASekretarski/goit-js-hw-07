@@ -5,7 +5,7 @@ const galleryListItems = [];
 
 galleryItems.forEach(item => {
 
-    galleryListItems.push(`<div class="gallery__item">
+    galleryListItems.push(`<li><div class="gallery__item">
   <a class="gallery__link" href="${item.original}">
     <img
       class="gallery__image"
@@ -14,7 +14,7 @@ galleryItems.forEach(item => {
       alt="Image description"
     />
   </a>
-</div>`);
+</div></li>`);
 });
 
 gallery.insertAdjacentHTML("beforeend", galleryListItems.join(""))
@@ -26,6 +26,6 @@ for (const link of allGalleryLinks) {
         event.preventDefault()
         const imageLink = `<img width="1400" height="900" src="${link.href}">`
         basicLightbox.create(imageLink).show()  
-    })
+    }) 
 }
 
