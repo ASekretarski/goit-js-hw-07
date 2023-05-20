@@ -5,9 +5,9 @@ const gallery = document.querySelector('.gallery')
 const galleryListItems = [];
 
 galleryItems.forEach(item => {
-    galleryListItems.push(`<li><a class="gallery__item" href="${item.original}">
+    galleryListItems.push(`<a class="gallery__item" href="${item.original}">
   <img class="gallery__image" src="${item.preview}" alt="${item.description}" />
-</a></li>`);
+</a>`);
 });
 
 gallery.insertAdjacentHTML("beforeend", galleryListItems.join(""))

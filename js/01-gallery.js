@@ -5,7 +5,7 @@ const galleryListItems = [];
 
 galleryItems.forEach(item => {
 
-    galleryListItems.push(`<li><div class="gallery__item">
+    galleryListItems.push(`<div class="gallery__item">
   <a class="gallery__link" href="${item.original}">
     <img
       class="gallery__image"
@@ -14,7 +14,7 @@ galleryItems.forEach(item => {
       alt="Image description"
     />
   </a>
-</div></li>`);
+</div>`);
 });
 
 gallery.insertAdjacentHTML("beforeend", galleryListItems.join(""))
